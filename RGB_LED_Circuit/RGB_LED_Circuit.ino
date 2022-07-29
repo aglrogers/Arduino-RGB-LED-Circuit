@@ -110,6 +110,12 @@ void loop()
           break;
       }
     }
+    else
+    {
+      // Delay for cycle smoothing
+      // Strategically placed here to help buffer out the main loop for performance reasons
+      delay(cycleInterval);
+    }
   }
   else
   {
@@ -194,8 +200,6 @@ void CycleColours()
       selector++;
     }
   }
-
-  delay(cycleInterval);
 }
 
 // Apply the colour to the LED
